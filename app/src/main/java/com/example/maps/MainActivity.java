@@ -27,10 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<String> list = new ArrayList<>();
         list.add("Все");
-        list.add("Пожилые");
-        list.add("Молодые");
-        list.add("Для брака");
-        list.add("область");
+        list.add("по городу");
+        list.add("по области");
+        list.add("для детей");
         Single.setTags(list);
 
 

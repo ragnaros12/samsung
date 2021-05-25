@@ -39,8 +39,8 @@
         android:id="@+id/swiper"
         android:layout_gravity="bottom"
         app:cardCornerRadius="20dp"
-        android:layout_marginBottom="-470dp"
-        android:layout_height="500dp">
+        android:layout_marginBottom="-520dp"
+        android:layout_height="550dp">
         <FrameLayout
             android:layout_width="match_parent"
             android:background="@drawable/bg"
@@ -58,7 +58,7 @@
             </androidx.cardview.widget.CardView>
             <TextView
                 android:layout_width="150dp"
-                android:layout_marginTop="260dp"
+                android:layout_marginTop="240dp"
                 android:textAlignment="center"
                 android:textColor="@color/text"
                 android:layout_marginStart="20dp"
@@ -72,7 +72,7 @@
                 android:textAlignment="center"
                 android:fontFamily="@font/font_bold"
                 android:textSize="@dimen/SubSubText"
-                android:layout_marginTop="250dp"
+                android:layout_marginTop="240dp"
                 android:layout_marginEnd="20dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/text"
@@ -82,8 +82,8 @@
                 android:layout_width="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/font_bold"
-                android:textSize="@dimen/MainText"
-                android:layout_marginTop="290dp"
+                android:textSize="@dimen/SubText"
+                android:layout_marginTop="270dp"
                 android:textAlignment="center"
                 android:layout_marginLeft="50dp"
                 android:textColor="@color/text"
@@ -94,8 +94,8 @@
                 android:layout_width="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/font_bold"
-                android:textSize="@dimen/SubSubSubText"
-                android:layout_marginTop="330dp"
+                android:textSize="@dimen/SubSubSubSubText"
+                android:layout_marginTop="305dp"
                 android:layout_marginLeft="20dp"
                 android:textColor="@color/text"
                 android:layout_marginRight="20dp"
