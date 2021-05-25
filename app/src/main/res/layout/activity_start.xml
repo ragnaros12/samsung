@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="20dp"
+    android:orientation="vertical"
+    android:background="@drawable/bg_1"
+    android:paddingRight="20dp"
+    tools:context=".Start">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_weight="1.4"
+        android:layout_gravity="center"
+        android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="20dp"
+            android:layout_gravity="bottom"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="225dp"
+                android:layout_height="337dp"
+                android:id="@+id/image"
+                android:layout_marginBottom="20dp" />
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/text"
+            android:fontFamily="@font/font_bold"
+            android:textSize="@dimen/SubText"
+            android:id="@+id/name"
+            android:layout_marginBottom="20dp"
+            android:textAlignment="center"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:onClick="click_start"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                app:cardCornerRadius="10dp"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:onClick="click_start"
+                    android:text="@string/Start"
+                    android:textColor="@color/text_white"
+                    android:fontFamily="@font/font_bold"
+                    android:background="@color/button"
+                    android:textSize="@dimen/SubSubText" />
+            </androidx.cardview.widget.CardView>
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="27dp"
+                android:id="@+id/bookmark"
+                android:src="@drawable/bookmark"
+                android:onClick="click_to_favorite"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="?android:selectableItemBackground"
+                android:layout_gravity="center"
+                android:layout_marginRight="20dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:textColor="@color/text"
+                android:text="Теги: "
+                android:fontFamily="@font/font_bold"
+                android:textSize="@dimen/SubTextMini" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font"
+                android:layout_marginRight="40dp"
+                android:textColor="@color/text"
+                android:textSize="@dimen/SubSubText"
+                android:id="@+id/tags" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:textColor="@color/text"
+                android:text="время пути: "
+                android:fontFamily="@font/font_bold"
+                android:textSize="@dimen/SubTextMini" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font"
+                android:layout_marginRight="40dp"
+                android:textColor="@color/text"
+                android:text="@string/load"
+                android:textSize="@dimen/SubSubText"
+                android:id="@+id/time_travel" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:textColor="@color/text"
+                android:text="расстояние: "
+                android:fontFamily="@font/font_bold"
+                android:textSize="@dimen/SubTextMini" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font"
+                android:layout_marginRight="40dp"
+                android:textColor="@color/text"
+                android:text="@string/load"
+                android:textSize="@dimen/SubSubText"
+                android:id="@+id/width" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="40dp"
+            android:textColor="@color/text"
+            android:fontFamily="@font/font_bold"
+            android:textSize="@dimen/SubSubText"
+            android:id="@+id/desc" />
+    </LinearLayout>
+
+</LinearLayout>
