@@ -74,7 +74,7 @@ public class Map extends AppCompatActivity {
             });
             dialog.show();
         };
-        RouterByOne router = new RouterByOne(mapView, getResources(), Single.getRoutes().get(Single.getCurrentRoute()).getPoints(), findViewById(R.id.time), findViewById(R.id.width), next, last);
+        RouterByOne router = new RouterByOne(mapView, getResources(), Single.getRoutes().get(Single.getCurrentRoute()).getPoints(), findViewById(R.id.time), findViewById(R.id.width), next, last, getApplicationContext());
         LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         while (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);

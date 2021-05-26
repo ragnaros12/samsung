@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Database.Init(getApplicationContext());
-        MapKitFactory.setApiKey("9a82ebf5-58a5-4e4a-9c05-ca3a05df40df");
+        MapKitFactory.setApiKey("fc3a9d17-448a-4ead-93e3-d86dbbd7bac1");
         MapKitFactory.initialize(getApplicationContext());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         list.add("по городу");
         list.add("по области");
         list.add("для детей");
+        list.add("для пар");
         Single.setTags(list);
 
 

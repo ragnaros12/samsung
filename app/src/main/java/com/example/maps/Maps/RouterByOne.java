@@ -1,9 +1,13 @@
 package com.example.maps.Maps;
 
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import com.example.maps.Next;
 import com.example.maps.R;
@@ -27,7 +31,9 @@ import com.yandex.mapkit.transport.masstransit.TimeOptions;
 import com.yandex.runtime.Error;
 import com.yandex.runtime.image.ImageProvider;
 import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
 import java.util.List;
+import java.util.TooManyListenersException;
 
 public class RouterByOne implements Session.RouteListener {
     public int curr = 0;
@@ -41,8 +47,9 @@ public class RouterByOne implements Session.RouteListener {
     boolean search = false;
     Next next;
     Next last;
+    Context context;
 
-    public RouterByOne(MapView map, Resources resources, ArrayList<Point> points, TextView time, TextView width, Next next, Next last){
+    public RouterByOne(MapView map, Resources resources, ArrayList<Point> points, TextView time, TextView width, Next next, Next last, Context context){
         this.mapObject = map.getMap().getMapObjects().addCollection();
         this.map = map.getMap();
         pedestrianRouter = TransportFactory.getInstance().createPedestrianRouter();
@@ -52,6 +59,7 @@ public class RouterByOne implements Session.RouteListener {
         this.width = width;
         this.next = next;
         this.last = last;
+        this.context = context;
     }
 
     public void draw(Point StartPoint){
@@ -78,7 +86,7 @@ public class RouterByOne implements Session.RouteListener {
             }
             time.setText(list.get(i1).getMetadata().getWeight().getWalkingDistance().getText());
             width.setText(list.get(i1).getMetadata().getWeight().getTime().getText());
-            if(list.get(i1).getMetadata().getWeight().getWalkingDistance().getValue() <= 300) {
+            if(list.get(i1).getMetadata().getWeight().getWalkingDistance().getValue() <= 50) {
                 if(points.size() - 1 != curr) {
                     curr++;
                     next.Next();
@@ -98,7 +106,8 @@ public class RouterByOne implements Session.RouteListener {
     }
 
     @Override
-    public void onMasstransitRoutesError(@NonNull Error error) {
-
+    public void onMasstransitRoutesError(@NonNull Error error){
+        Log.println(Log.WARN,"1", error.toString());
+        draw(points.get(curr));
     }
 }

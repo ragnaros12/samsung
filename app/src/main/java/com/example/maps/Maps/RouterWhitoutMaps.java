@@ -68,6 +68,7 @@ public class RouterWhitoutMaps implements Session.RouteListener {
 
     @Override
     public void onMasstransitRoutesError(@NonNull Error error) {
+        //Toast.makeText(context, "ошибка " + error.toString(), Toast.LENGTH_SHORT).show();
         draw(start);
     }
 }
